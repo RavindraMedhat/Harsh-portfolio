@@ -3,15 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Portfolio | Cinematic Style</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
+    <header class="hero">
+        <video autoplay muted loop id="hero-video">
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay">
+            <h1 class="title">Harsh Kantharia</h1>
+            <p class="subtitle">Video Editing | Sound Design</p>
+        </div>
     </header>
-    <main>
-        <p>This is a simple portfolio page.</p>
-    </main>
+    
+    <section class="portfolio">
+        <h2>My Work</h2>
+        <div class="grid">
+            <div class="item"> <a href="https://www.youtube.com/watch?v=9rTc8A9rUos" target="_blank"><img src="project1.jpg" alt="The Loop Short Film"></a> </div>
+            <div class="item"> <a href="https://www.youtube.com/watch?v=zY6en6NrgMg" target="_blank"><img src="project2.jpg" alt="Vijay Dairy - Cinesta"></a> </div>
+        </div>
+    </section>
+    
+    <section class="reels">
+        <h2>Edited Reels</h2>
+        <div class="reel-scroll">
+            <div class="reel-item"> <a href="https://www.instagram.com/reel/DDmWXIDtj9T/" target="_blank"><img src="reel1.jpg" alt="Big Bunny Reel"></a> </div>
+            <div class="reel-item"> <a href="https://www.instagram.com/reel/DEP3HD6psno/" target="_blank"><img src="reel2.jpg" alt="Kajal’s Couture"></a> </div>
+            <div class="reel-item"> <a href="https://www.instagram.com/reel/DEhBTxEhrEq/" target="_blank"><img src="reel3.jpg" alt="House of Mira"></a> </div>
+        </div>
+    </section>
+    
+    <section class="sound-section">
+        <h2>Sound Design</h2>
+        <div class="waveform-animation"></div>
+        <audio controls>
+            <source src="sound-sample.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+    
+    <section class="about">
+        <h2>About Me</h2>
+        <p>Based in Surat, I specialize in filmmaking, video editing, and sound design. Passionate about storytelling through visuals and sound.</p>
+    </section>
+    
+    <section class="contact">
+        <h2>Contact</h2>
+        <p>Email: kanthariaharsh1952@gmail.com</p>
+        <p>Phone: 7069849184</p>
+    </section>
+    
+    <script>
+        gsap.from(".title", {opacity: 0, y: -50, duration: 1});
+        gsap.from(".subtitle", {opacity: 0, y: 50, duration: 1, delay: 0.5});
+        gsap.from(".portfolio .item", {opacity: 0, scale: 0.9, duration: 1, stagger: 0.3});
+        gsap.from(".reels .reel-item", {opacity: 0, x: -100, duration: 1, stagger: 0.3});
+        gsap.from(".sound-section", {opacity: 0, scale: 0.9, duration: 1, delay: 0.5});
+    </script>
 </body>
 </html>
